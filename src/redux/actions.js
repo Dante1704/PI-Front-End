@@ -20,7 +20,7 @@ export const GET_COUNTRY_BY_POPULATION = "GET_COUNTRY_BY_POPULATION"
 export const getAllCountries = () => {
     return function (dispatch) {
         return axios
-            .get("http://localhost:3001/countries")
+            .get("https://pi-back-end-production.up.railway.app/countries") //http://localhost:3001
             .then((response) => {
 
                 const allCountriesAux = response.data;
