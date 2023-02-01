@@ -38,7 +38,7 @@ export const getAllCountries = () => {
 export const getCountriesByName = (name) => {
     return function (dispatch) {
         return axios
-            .get(`http://localhost:3001/countries?name=${name}`)
+            .get(`https://pi-back-end-production.up.railway.app/countries?name=${name}`) //http://localhost:3001/
             .then((response) => {
                 const allCountriesAux = response.data;
                 const allCountriesByName = arrayOfArraysOfCountries(allCountriesAux);
@@ -60,7 +60,7 @@ export const getCountriesByName = (name) => {
 export const getAllActivities = () => {
     return function (dispatch) {
         return axios
-            .get("http://localhost:3001/activities")
+            .get("https://pi-back-end-production.up.railway.app/activities")//http://localhost:3001
             .then((response) =>
                 dispatch({
                     type: GET_ALL_ACTIVITIES,
@@ -93,7 +93,7 @@ export const cleanDetail = () => {
 export const getCountryDetail = (id) => {
     return function (dispatch) {
         return axios
-            .get(`http://localhost:3001/countries/${id}`)
+            .get(`https://pi-back-end-production.up.railway.app/${id}`) //http://localhost:3001/countries
             .then((response) =>
                 dispatch({
                     type: GET_COUNTRY_DETAIL,
@@ -107,13 +107,13 @@ export const getCountryDetail = (id) => {
 export const createActivity = ({ name, difficulty, duration, season, countryId }) => {
     return function (dispatch) {
         return axios
-            .post(`http://localhost:3001/activities`, {
+            .post(`https://pi-back-end-production.up.railway.app/activities`, {
                 name,
                 difficulty: parseInt(difficulty),
                 duration: parseInt(duration),
                 season,
                 countryId
-            })
+            }) //http://localhost:3001
             .then((response) => {
                 if (!response.data[1]) return dispatch({
                     type: CREATE_ACTIVITY,
@@ -140,8 +140,6 @@ export const deleteActivity = (activityId) => {
             .then((response) => {
 
             })
-
-
     }
 } */
 
