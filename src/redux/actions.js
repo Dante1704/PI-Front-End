@@ -93,7 +93,7 @@ export const cleanDetail = () => {
 export const getCountryDetail = (id) => {
     return function (dispatch) {
         return axios
-            .get(`https://pi-back-end-production.up.railway.app/${id}`) //http://localhost:3001/countries
+            .get(`https://pi-back-end-production.up.railway.app/countries/detail/${id}`) //http://localhost:3001/countries
             .then((response) =>
                 dispatch({
                     type: GET_COUNTRY_DETAIL,
